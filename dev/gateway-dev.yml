@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: clue-manage-a
+          uri: lb://clue-manage
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/clueManage/**
+
+
+
+info:
+  version: @project.version@
